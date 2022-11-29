@@ -36,11 +36,11 @@ def atualiza_produto(id_produto, produto, fabricante, preco, quantidade):
     conexao.commit()
 
 def pesquisa_produto(produto):
-    """ marca a tarefa como concluida """
+    """ pesquisa um produto por um nome """
     return cursor.execute("select * from produto where produto like ?", (produto, ))
 
 def pesquisa_produto_id(id):
-    """ marca a tarefa como concluida """
+    """ pesquisa um produto por id """
     return cursor.execute("select * from produto where id = ?", (id, ))
 
 def pesquisa_tudo():
@@ -48,7 +48,7 @@ def pesquisa_tudo():
     return cursor.execute("select * from produto")
 
 def deleta_produto(id): # retorna um cursor
-    """ retorna a lista de tarefas cadastras """
+    """ deleta um produto por id """
     cursor.execute("delete from produto where id = ?", (id,))
     conexao.commit()
 
